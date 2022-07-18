@@ -1,4 +1,4 @@
-package inicio;
+package start;
 
 public class HelloWolrd {
 
