@@ -5,6 +5,7 @@ public class Person {
 	// atributos
 	private String firstName;
 	private String lastName;
+	private int age;
 
 	// metodos para acessar os atributos da classe
 	public String getFirstName() {
@@ -21,6 +22,14 @@ public class Person {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 }
