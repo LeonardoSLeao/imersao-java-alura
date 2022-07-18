@@ -1,11 +1,14 @@
 package model;
 
+import java.util.Date;
+
 public class Person {
 
 	// atributos
 	private String firstName;
 	private String lastName;
 	private int age;
+	private Date birthDate;
 
 	// metodos para acessar os atributos da classe
 	public String getFirstName() {
@@ -30,6 +33,14 @@ public class Person {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
 }
