@@ -13,15 +13,15 @@ public class AcessoDadosWebService {
 	public static void main(String[] args) throws Exception {
 
 		// fazer uma conexão HTTP e buscar os top 250 filmes
-		String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
+		String url = "https://api.mocki.io/v2/549a5d8b";
 		URI endereco = URI.create(url);
-		var client = HttpClient.newHttpClient();
-		var request = HttpRequest.newBuilder(endereco).GET().build();
+		HttpClient client = HttpClient.newHttpClient();
+		HttpRequest request = HttpRequest.newBuilder(endereco).GET().build();
 		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 		String body = response.body();
 
 		// extrair só os dados que interessam (titulo, poster, classificação)
-		var parser = new JsonParser();
+		JsonParser parser = new JsonParser();
 		List<Map<String, String>> listaDeFilmes = parser.parse(body);
 
 		// exibir e manipular os dados
