@@ -1,6 +1,5 @@
 package acesso;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -9,12 +8,12 @@ import java.net.http.HttpResponse.BodyHandlers;
 import java.util.List;
 import java.util.Map;
 
-public class AcessoListaDeFilmes {
+public class AcessoDadosWebService {
 
-	public static void main(String[] args) throws IOException, InterruptedException {
+	public static void main(String[] args) throws Exception {
 
 		// fazer uma conexão HTTP e buscar os top 250 filmes
-		String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
+		private String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
 		URI endereco = URI.create(url);
 		var client = HttpClient.newHttpClient();
 		var request = HttpRequest.newBuilder(endereco).GET().build();
@@ -32,7 +31,5 @@ public class AcessoListaDeFilmes {
 			System.out.println(filme.get("imDbRating"));
 			System.out.println();
 		}
-
 	}
-
 }
