@@ -13,7 +13,7 @@ public class AcessoDadosWebService {
 	public static void main(String[] args) throws Exception {
 
 		// fazer uma conexão HTTP e buscar os top 250 filmes
-		private String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
+		String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
 		URI endereco = URI.create(url);
 		var client = HttpClient.newHttpClient();
 		var request = HttpRequest.newBuilder(endereco).GET().build();
