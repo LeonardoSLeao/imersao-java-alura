@@ -35,7 +35,7 @@ public class AcessoDadosWebService {
 		for (Map<String, String> filme : listaDeFilmes) {
 
 			String urlImagem = filme.get("image");
-			String titulo = filme.get("title"); //
+			String titulo = filme.get("title");
 
 			InputStream inputStream = new URL(urlImagem).openStream();
 			String nomeArquivo = "stickers/" + titulo + ".png";
