@@ -1,12 +1,16 @@
 package acesso;
 
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.List;
 import java.util.Map;
+
+import stickers.GeradorDeStickers;
 
 public class AcessoDadosWebService {
 
@@ -24,12 +28,34 @@ public class AcessoDadosWebService {
 		JsonParser parser = new JsonParser();
 		List<Map<String, String>> listaDeFilmes = parser.parse(body);
 
-		// exibir e manipular os dados
+		// exibir os dados
+
+		GeradorDeStickers geradorDeStickers = new GeradorDeStickers();
+
 		for (Map<String, String> filme : listaDeFilmes) {
-			System.out.println(filme.get("title"));
-			System.out.println(filme.get("image"));
-			System.out.println(filme.get("imDbRating"));
+
+			String urlImagem = filme.get("image");
+			String titulo = filme.get("title"); //
+
+			InputStream inputStream = new URL(urlImagem).openStream();
+			String nomeArquivo = "stickers/" + titulo + ".png";
+
+			String dadosImagem = geradorDeStickers.criaStickers(inputStream, nomeArquivo);
+
+			System.out.println(titulo);
+			System.out.println("Dados da imagem: " + dadosImagem);
+			System.out.println("Imagem: " + filme.get("image"));
+			System.out.println("***********************");
 			System.out.println();
+
+			/*
+			 * System.out.println("Título: " + filme.get("title"));
+			 * System.out.println("Imagem: " + filme.get("image"));
+			 * System.out.println("Classificação: " + filme.get("imDbRating"));
+			 * System.out.println("Ano de Lançamento: " + filme.get("year"));
+			 * System.out.println("***********************"); System.out.println();
+			 */
+
 		}
 	}
 }
