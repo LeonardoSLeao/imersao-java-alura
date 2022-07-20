@@ -43,7 +43,7 @@ public class AcessoDadosWebService {
 			String dadosImagem = geradorDeStickers.criaStickers(inputStream, nomeArquivo);
 
 			System.out.println(titulo);
-			System.out.println("Dados da imagem: " + dadosImagem);
+			System.out.println("Dados de tamanho da imagem: " + dadosImagem);
 			System.out.println("Imagem: " + filme.get("image"));
 			System.out.println("***********************");
 			System.out.println();

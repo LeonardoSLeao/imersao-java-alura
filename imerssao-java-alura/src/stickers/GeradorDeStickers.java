@@ -33,7 +33,7 @@ public class GeradorDeStickers {
 		graphics.setColor(Color.YELLOW);
 		graphics.setFont(fonte);
 
-		// escrever uma frase na nova imagem-
+		// escrever uma frase na nova imagem
 		graphics.drawString("AI DENTRO!", 100, novaAltura - 100);
 
 		// escrever a nova imagem em um arquivo
