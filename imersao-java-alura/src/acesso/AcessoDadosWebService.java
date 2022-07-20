@@ -45,7 +45,7 @@ public class AcessoDadosWebService {
 			System.out.println(titulo);
 			System.out.println("Dados de tamanho da imagem: " + dadosImagem);
 			System.out.println("Imagem: " + filme.get("image"));
-			System.out.println("***********************");
+			System.out.println("************************");
 			System.out.println();
 
 			/*
