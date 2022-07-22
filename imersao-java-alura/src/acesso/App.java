@@ -11,23 +11,23 @@ public class App {
 
 	public static void main(String[] args) throws Exception {
 
-		// url do serviço de filmes
-		String url = "https://api.mocki.io/v2/549a5d8b";
+		// IMDB
+		//String url = "https://api.mocki.io/v2/549a5d8b";
+		// ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
-		// url da nasa
-		// String url =
-		// "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
+		// NASA
+		// String url ="https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
+		// ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+		
+		// Linguagens
+		String url = "http://localhost:8080/linguagens";
+		ExtratorDeConteudo extrator = new ExtratorDeConteudoDeLinguagens();
 
-		// chamada para a classe ClienteHttp
+		// chamada HTTP
 		ClienteHttp http = new ClienteHttp();
 		String json = http.buscaDados(url);
 
-		// chama o extrator da nasa
-		// ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
-		// List<Conteudo> conteudos = extrator.extraiConteudos(json);
-
-		// chama o extrator do MDB
-		ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
+		// chama o extrator para obter a lista de conteudos
 		List<Conteudo> conteudos = extrator.extraiConteudos(json);
 
 		// chama o gerador de stickers
